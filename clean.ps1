@@ -1,0 +1,1 @@
+Get-ChildItem -Path . -Recurse -Include *.o, *.exe | Remove-Item -Force

@@ -1,0 +1,12 @@
+# Ignore VSCode folder
+
+.vscode
+
+# Ignore object code and executables
+
+/**/*.o
+/**/*.exe
+
+# Ignore dlls
+
+/*.dll
