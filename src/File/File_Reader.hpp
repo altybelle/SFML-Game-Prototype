@@ -1,16 +1,15 @@
 #ifndef FILE_READER_HPP
 #define FILE_READER_HPP
 
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
-class File_Reader
-{
-private:
+class File_Reader {
+   private:
     ifstream file;
 
-public:
+   public:
     ifstream &get_file();
     string get_content();
     bool open_file(const string &filename);

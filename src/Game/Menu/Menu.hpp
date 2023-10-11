@@ -7,14 +7,13 @@
 #define SCREEN_HEIGHT 720
 #define SCREEN_WIDTH 1080
 
-class Menu
-{
-private:
+class Menu {
+   private:
     sf::Font font;
     std::vector<sf::Text> texts;
     sf::RectangleShape *selector;
 
-public:
+   public:
     Menu();
     std::vector<sf::Text> get_texts();
     sf::RectangleShape *get_selector();
