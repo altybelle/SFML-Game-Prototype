@@ -34,24 +34,14 @@ void Game::pollEvents() {
                 if (ev.key.code == sf::Keyboard::Escape) {
                     window->close();
                 } else if (ev.key.code == sf::Keyboard::Enter || ev.key.code == sf::Keyboard::Z) {
-                    if (menu.get_selector()->getGlobalBounds().intersects(menu.get_texts()[0].getGlobalBounds())) {
-                    } else if (menu.get_selector()->getGlobalBounds().intersects(menu.get_texts()[1].getGlobalBounds())) {
-                    } else if (menu.get_selector()->getGlobalBounds().intersects(menu.get_texts()[2].getGlobalBounds())) {
-                    } else if (menu.get_selector()->getGlobalBounds().intersects(menu.get_texts()[3].getGlobalBounds())) {
+                    if (menu.check_selector_intersection_with_text(0)) {
+                    } else if (menu.check_selector_intersection_with_text(1)) {
+                    } else if (menu.check_selector_intersection_with_text(2)) {
+                    } else if (menu.check_selector_intersection_with_text(3)) {
                         window->close();
                     }
-                } else if (ev.key.code == sf::Keyboard::Up) {
-                    if (menu.get_selector()->getGlobalBounds().intersects(menu.get_texts()[0].getGlobalBounds())) {
-                        menu.get_selector()->move(0, 150);
-                    } else {
-                        menu.get_selector()->move(0, -50);
-                    }
-                } else if (ev.key.code == sf::Keyboard::Down) {
-                    if (menu.get_selector()->getGlobalBounds().intersects(menu.get_texts()[3].getGlobalBounds())) {
-                        menu.get_selector()->move(0, -150);
-                    } else {
-                        menu.get_selector()->move(0, 50);
-                    }
+                } else if (ev.key.code == sf::Keyboard::Up || ev.key.code == sf::Keyboard::Down) {
+                    menu.control_selector(ev);
                 }
                 break;
         }

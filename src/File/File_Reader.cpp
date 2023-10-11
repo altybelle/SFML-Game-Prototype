@@ -14,7 +14,7 @@ bool File_Reader::open_file(const string &filename) {
     file.open(filename);
 
     if (file.is_open())
-        return true;
+        return file.good();
 
     return false;
 }
