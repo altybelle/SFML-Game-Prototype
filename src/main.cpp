@@ -3,7 +3,8 @@ using namespace std;
 
 #include "Game/Game.hpp"
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
 
     Game game;
 
@@ -15,9 +16,8 @@ int main(int argc, char **argv) {
     sound.setLoop(true);
     sound.play();
 
-    
-
-    while (game.isRunning()) {
+    while (game.isRunning())
+    {
         game.update();
         game.render();
     }
